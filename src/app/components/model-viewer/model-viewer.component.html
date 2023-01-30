@@ -1,0 +1,78 @@
+<div class="component-container">
+  <div class="title-container">
+    <h1>Model Viewer Demo</h1>
+  </div>
+
+  <canvas #canvas id="canvas" class="canvas" (resize)="onResize()"></canvas>
+
+  <div class="controls-container">
+    <div class="controls-group">
+      <h2>Render</h2>
+
+      <div class="controls">
+        <p>Render Scale</p>
+        <input class="slider" type="range" min="0.01" max="1" [value]="renderScale" step="0.01" (input)="OnChangeRenderScale($event)">
+        <p>{{renderScale}}</p>
+      </div>
+
+      <div class="controls">
+        <p>FOV</p>
+        <input class="slider" type="range" min="1" max="179" [value]="fov" (input)="OnChangeFov($event)">
+        <p>{{fov}}</p>
+      </div>
+
+      <div class="controls">
+        <p>Wireframe</p>
+        <input class="checkbox" type="checkbox" [value]="wireframe" (change)="onChangeWireframe($event)">
+      </div>
+    </div>
+
+    <hr class="solid">
+
+    <div class="controls-group">
+      <h2>Material</h2>
+
+      <div class="controls">
+        <p>Color</p>
+        <input type="color" [value]="color" (input)="onChangeColor($event)">
+        <p>{{color}}</p>
+      </div>
+
+      <div class="controls">
+        <p>Metalness</p>
+        <input class="slider" type="range" min="0" max="1" [value]="metalness" step="0.01" (input)="onChangeMetalness($event)">
+        <p>{{metalness}}</p>
+      </div>
+
+      <div class="controls">
+        <p>Roughness</p>
+        <input class="slider" type="range" min="0" max="1" [value]="roughness" step="0.01" (input)="OnChangeRoughness($event)">
+        <p>{{roughness}}</p>
+      </div>
+    </div>
+
+    <hr class="solid">
+
+    <div class="controls-group">
+      <h2>Environment</h2>
+
+      <div class="controls">
+        <p>Blur</p>
+        <input class="slider" type="range" min="0" max="1" [value]="bgBlurriness" step="0.01" (input)="onBgBlurrinessChange($event)">
+        <p>{{bgBlurriness}}</p>
+      </div>
+
+      <div class="controls">
+        <p>Intensity</p>
+        <input class="slider" type="range" min="0" max="1" [value]="bgIntensity" step="0.01" (input)="onBgIntensityChange($event)">
+        <p>{{bgIntensity}}</p>
+      </div>
+
+      <div class="controls">
+        <p>Exposure</p>
+        <input class="slider" type="range" min="0" max="10" [value]="toneMappingExposure" step="0.1" (input)="onToneMappingExposureChange($event)">
+        <p>{{toneMappingExposure}}</p>
+      </div>
+    </div>
+  </div>
+</div>
